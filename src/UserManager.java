@@ -16,18 +16,19 @@ public class UserManager {
         productList.add(new ProductCard("Шуба", 23000, 10));
 
 
-        System.out.println("Товар: " + productList.get(0).getTitle() + " цена со скидкой " + productList.get(0).getFinalPrice());
-        System.out.println("Товар: " + productList.get(1).getTitle() + " цена со скидкой " + productList.get(1).getFinalPrice());
+        buyProduct(userList.get(0), productList.get(0));
+        buyProduct(userList.get(0), productList.get(1));
 
+    }
 
+    public void buyProduct (User user, ProductCard product) {
+        int finalPrice = product.getFinalPrice();
 
-
-
-
-
-
-
-
-
+        if (user.getBalance() >= finalPrice) {
+            int newBalance = user.getBalance() - finalPrice;
+            user.setBalance(newBalance);
+            System.out.println(" Пользователь " + user.getName() + " успешно купил " + product.getTitle() + " за " + finalPrice);
+            System.out.println(" Остаток на балансе " + user.getBalance());
+        }
     }
 }
