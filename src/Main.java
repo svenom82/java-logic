@@ -1,16 +1,20 @@
 public class Main {
     public static void main(String[] args) {
 
-        int roomCount = 4;
-        int basePrice = 5000;
-        int total = 0;
+       java.util.Scanner input = new java.util.Scanner(System.in);
+       U.pl(" Введите базовую стоимость ремонта одной комнаты ");
+
+       int basePrice = input.nextInt();
+        U.pl(" Введите количество комнат ");
+       int roomCount = input.nextInt();
 
 
-        for (int i = 1; i <= roomCount; i++) {
-            total += basePrice + (i -1) * 1000;
-            U.pl("Комната " + i + " расчитана.");
-        }
-        U.pl("Итоговая стоимоcть ремонта " + total);
+       for (int i = 1; i <= roomCount; i++) {
+           int room = i * basePrice;
+           U.pl("Комната " + i + " стоит " + room);
+       }
+
+
     }
 
 }
