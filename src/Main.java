@@ -1,22 +1,14 @@
 public class Main {
     public static void main(String[] args) {
+        int totalEnergy = 0;
+        int isolierglas  = 5;
 
-        int balance = 450;
-        int fee = 100;
-
-        for (int i = 1; i <= 5; i++) {
-            balance -= 100;
-            if (balance < 100) {
-                System.out.println("Деньги кончились, прерываем работу! ");
-                break;
-            }
-            System.out.println("Этаж " + i + " проверен. ");
-
-
-
-        }
-
-
+      for (int i = 1; i <= isolierglas; i++) {
+          totalEnergy += i;
+          System.out.println(" Окно номер " + i + " успешно поднято на этаж. ");
+      }
+        System.out.println(" Всего затрачено энергии " + totalEnergy + " едениц.");
+        System.out.println(" Все окна доставлены, бригада свободна");
     }
 
 }
