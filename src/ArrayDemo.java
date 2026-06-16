@@ -1,20 +1,28 @@
+import java.util.Scanner;
+
 public class ArrayDemo {
 
     public static void main(String[] args) {
 
-        String[]  name = {"Иван", "мария", "Петр"};
+        Scanner input = new Scanner(System.in);
+        U.pl("За сколько дней выводить температуру ? ");
+        int num = input.nextInt();
 
-        for (String i : name) {
-            System.out.println( "Привет " + i);
+        int[] days = new int[num];
+
+        for (int i = 0; i < days.length; i++) {
+            U.pl("Введите температуру за день: " + (i + 1) + ";");
+            days[i] = input.nextInt();
         }
 
-        int[] number = {150, 300, 50, 200};
-        int sum = 24;
-
-        for (int b : number) {
-            sum = b + sum;
-            U.pl(sum);
+        int sum = 0;
+        for (int i = 0; i < days.length; i++) {
+            sum += days[i];
         }
+
+        int average = sum / num;
+        U.pl("Средняя температура за " + num + "дней составила " + average);
+
 
 
     }
