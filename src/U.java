@@ -12,4 +12,7 @@ public class U {
     public static void pl (float number) {
         System.out.println(number);
     }
+    public static void pl (int[] array) {
+        System.out.println(java.util.Arrays.toString(array));
+    }
 }
