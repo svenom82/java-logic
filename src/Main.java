@@ -1,20 +1,14 @@
 public class Main {
     public static void main(String[] args) {
+        MetodDemo.sayHelloByName("Евгений");
+        MetodDemo.sayHelloByName("Алексей");
 
-       java.util.Scanner input = new java.util.Scanner(System.in);
-       U.pl(" Введите базовую стоимость ремонта одной комнаты ");
+        int sum = MetodDemo.plus(22, 23);
+        U.pl("Результат сложения: " + sum);
 
-       int basePrice = input.nextInt();
-        U.pl(" Введите количество комнат ");
-       int roomCount = input.nextInt();
-
-
-       for (int i = 1; i <= roomCount; i++) {
-           int room = i * basePrice;
-           U.pl("Комната " + i + " стоит " + room);
-       }
-
-
+        int[] myArr = {12, 45, 78, 23, 9};
+        int maximum = MetodDemo.finMax(myArr);
+        U.pl("Самое большое число " + maximum);
     }
 
 }
