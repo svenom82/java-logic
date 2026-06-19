@@ -1,28 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-       String fileName = "Avatar.SVG";
-       String url = " MY-FIGMA-LINK.COM/PROJECT1 ";
-       String link ="https://www.figma.com/design/6u8tWHfm6jHnuO3YT0xTCT";
-       U.pl("Исправленная строка " + cleanUrl(url));
-       U.pl("Это верная ссылка на фигму " + isFigmaLink(link));
+        String name = "Евгений Селезнев";
+        U.pl(getAvatarInitials(name));
 
     }
 
-    public static boolean isPngFile(String fileName) {
-        if (fileName.endsWith(".png")) {
-            U.pl("Файл правильного формата! ");
-        } else {
-            U.pl(" Не верный формат");
-        }return fileName.endsWith(".png");
-
+    public static String getAvatarInitials(String name) {
+        int firstLetterOfLastName = name.indexOf(" ") + 1;
+        String result = name.substring(0, 1) + name.substring(firstLetterOfLastName, firstLetterOfLastName + 1 );
+        return result.toUpperCase();
     }
 
-    public static String cleanUrl (String url) {
-        url = url.trim();
-        url = url.toLowerCase();
-        return url;
-    }
-    public static boolean isFigmaLink (String link) { boolean result = link.contains("figma.com"); return result; }
+
 
 
 
