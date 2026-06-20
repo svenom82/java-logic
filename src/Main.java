@@ -10,15 +10,18 @@ public class Main {
     public static void main(String[] args) {
         OrderStatus currentStatus = OrderStatus.DRAFT;
 
-        U.pl(getStatusColor(OrderStatus.DRAFT));
+       getStatusColor(currentStatus);
     }
 
-    public static  String getStatusColor(OrderStatus status) {
-        return switch (status) {
-            case DRAFT -> "Серый";
-            case PROCESSING -> "Желтый";
-            case DELIVERED -> "Зеленый";
-        };
+    public static void getStatusColor(OrderStatus status) {
+        switch (status) {
+            case DRAFT -> U.pl("Пользователь начал оформление, плашка серая");
+            case PROCESSING -> U.pl("Заказ улетел на склад, плашка желтая");
+            case DELIVERED -> {
+                U.pl("Заказ успешно дошел до клиента");
+                U.pl("Красим плашку в зеленый и шлем пуш");
+            }
+        }
     }
 
 }
