@@ -1,18 +1,24 @@
 public class Main {
+    public static final int BASE_GRID = 8;
+
+    enum OrderStatus {
+        DRAFT,
+        PROCESSING,
+        DELIVERED
+    }
+
     public static void main(String[] args) {
-        String name = "Евгений Селезнев";
-        U.pl(getAvatarInitials(name));
+        OrderStatus currentStatus = OrderStatus.DRAFT;
 
+        U.pl(getStatusColor(OrderStatus.DRAFT));
     }
 
-    public static String getAvatarInitials(String name) {
-        int firstLetterOfLastName = name.indexOf(" ") + 1;
-        String result = name.substring(0, 1) + name.substring(firstLetterOfLastName, firstLetterOfLastName + 1 );
-        return result.toUpperCase();
+    public static  String getStatusColor(OrderStatus status) {
+        return switch (status) {
+            case DRAFT -> "Серый";
+            case PROCESSING -> "Желтый";
+            case DELIVERED -> "Зеленый";
+        };
     }
-
-
-
-
 
 }
