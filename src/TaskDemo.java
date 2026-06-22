@@ -1,32 +1,23 @@
+import java.util.ArrayList;
+
 public class TaskDemo {
 
     public static void main(String[] args) {
-        int[] gaps = {8, -2, 0, 16};
+        ArrayList<String> card = new ArrayList<>();
+        card.add("Кросовки");
+        card.add("Подписка");
+        card.add("Худи");
 
-        for (int i = 0; i < gaps.length; i++) {
-            U.pl(checkGrid(gaps[i]));
-        }
-
-
+        card.removeIf(item ->!item.equals("Подписка") );
+        System.out.println(card);
     }
 
-    public static String userNameLogin(String username) {
-        String cleaned = username.trim();
-
-        if (cleaned.isBlank()) {
-            return "Аноним";
+    public static void cleanCart(String[] card) {
+        for (String item : card) {
+            if (item.equals("Подписка")){
+                U.pl(item);
+            }
         }
-        return  cleaned;
-    }
 
-    public static String checkGrid(int num) {
-        if (num == 0) {
-            return "Отступов нет";
-        } else if (num > 0) {
-            return "Валидный отступ";
-        } else {
-            return "Ошибка! Отрицательный отступ";
-        }
     }
-
 }
