@@ -3,21 +3,13 @@ import java.util.ArrayList;
 public class TaskDemo {
 
     public static void main(String[] args) {
-        ArrayList<String> card = new ArrayList<>();
-        card.add("Кросовки");
-        card.add("Подписка");
-        card.add("Худи");
+        try {
+            // throw new IllegalArgumentException("Неверный формат данных");
+        } catch (IllegalArgumentException e) {
 
-        card.removeIf(item ->!item.equals("Подписка") );
-        System.out.println(card);
-    }
-
-    public static void cleanCart(String[] card) {
-        for (String item : card) {
-            if (item.equals("Подписка")){
-                U.pl(item);
-            }
+            System.out.println("Сработал перехват, Сообщение: " + e.getMessage());
+        } finally {
+            U.pl("Завершение операции");
         }
-
     }
 }
