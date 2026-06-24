@@ -1,15 +1,17 @@
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class TaskDemo {
 
     public static void main(String[] args) {
-        try {
-            // throw new IllegalArgumentException("Неверный формат данных");
-        } catch (IllegalArgumentException e) {
 
-            System.out.println("Сработал перехват, Сообщение: " + e.getMessage());
-        } finally {
-            U.pl("Завершение операции");
-        }
+        ZoneId tokyoZone = ZoneId.of("Asia/Tokyo");
+
+        ZonedDateTime tokyoTime = ZonedDateTime.now(tokyoZone);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String uiText = tokyoTime.format(formatter);
+        System.out.println("Точное время в Токио: " + uiText);
     }
 }
