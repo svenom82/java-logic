@@ -1,17 +1,16 @@
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TaskDemo {
 
     public static void main(String[] args) {
-
-        ZoneId tokyoZone = ZoneId.of("Asia/Tokyo");
-
-        ZonedDateTime tokyoTime = ZonedDateTime.now(tokyoZone);
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String uiText = tokyoTime.format(formatter);
-        System.out.println("Точное время в Токио: " + uiText);
+        String[] color = {"FFFFFF", "000000", "E7495B", "333333"};
+        System.out.println(findColor(color,"E7495B"));
+    }
+    public static boolean findColor(String[] pallete, String target) {
+        for (int i = 0; i < pallete.length; i++) {
+            if (pallete[i].equalsIgnoreCase(target)) {
+                return true;
+            }
+        } return  false;
     }
 }
