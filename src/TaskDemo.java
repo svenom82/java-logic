@@ -4,16 +4,20 @@ import java.util.Scanner;
 public class TaskDemo {
 
     public static void main(String[] args) {
-        String[] words = {"код", "Програмирование", "джава"};
-        System.out.println(findLongestWorld(words));
+        Status[] statuses = new Status[]{Status.SUCCESS, Status.ERROR, Status.WARNING};
+        System.out.println(Array(statuses));
+    }
+
+    public static int Array(Status[] arr) {
+        int count = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == Status.ERROR) {
+                count++;
+            }
+        }
+        return count;
 
     }
-    public static String findLongestWorld (String[] world) {
-        String longest = world[0];
-        for (int i = 1; i < world.length; i++) {
-            if (longest.length() < world[i].length()) {
-                longest = world[i];
-            }
-        } return longest;
-    }
+
 }
