@@ -1,27 +1,46 @@
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Arrays;
+import java.util.Scanner;
+
 
 public class TaskDemo {
 
+    enum Status {Scheduled, Active, Overdue}
+
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println(" Введите дату: ");
+        String dateText = input.nextLine();
 
-        int[] yearUser = new int[]{2010, 1995, 2008, 2024, 2015, 1990};
-        System.out.println("Совершеннолетних: " + yearUserCount(yearUser));
+        System.out.println(checkDate(dateText));
     }
 
-    public static int yearUserCount(int[] yearUser) {
-        int currentUser = 2026;
-        int count = 0;
+    public static String checkDate(String date) {
+        try {
+            LocalDate inputDate = LocalDate.parse(date);
+            LocalDate today = LocalDate.now();
+            Status currentStatus;
 
-        for (int i = 0; i < yearUser.length; i++) {
-            int age = currentUser - yearUser[i];
-
-            if (age >= 18) {
-                count++;
+            if (inputDate.isBefore(today)) {
+                currentStatus = Status.Overdue;
+            } else if (inputDate.isEqual(today)) {
+                currentStatus = Status.Active;
+            } else {
+                currentStatus = Status.Scheduled;
             }
-
-
-        }
-        return count;
-
+            switch (currentStatus) {
+                case Overdue:
+                return "Статус: Просрочено";
+                case Active:
+                return  "Статус: Активно сегодня";
+                case Scheduled:
+                return "Статус: Запланированно";
+                default:
+                return "Статус: Неизвестен";
+            }
+        } catch (DateTimeParseException e ) {return  "Ошибка: неверный формат ввода даты";}
     }
+
 }
