@@ -3,16 +3,18 @@ public class TaskDemo {
 
     public static void main(String[] args) {
 
-        int number = 2;
-       printNumber(number);
-
+        Status currentStatus = Status.DRAFT;
+        System.out.println("Ваш лимит: " + printStatus(currentStatus));
 
     }
 
-    public static void printNumber(int number) {
-        for (int i = 1; i <= number; i++) {
-            System.out.println("Отрисовка карточки номер " + i);
+    public static int printStatus (Status status) {
+        switch (status) {
+            case APPROVED: return 0;
+            case REVIEW: return 50;
+            case  DRAFT: return 100;
         }
+        return 0;
     }
 
 

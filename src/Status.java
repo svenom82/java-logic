@@ -1,3 +1,3 @@
 enum Status {
-    SUCCESS, ERROR, WARNING
+    DRAFT, REVIEW, APPROVED
 }
