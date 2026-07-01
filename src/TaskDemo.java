@@ -2,20 +2,31 @@ public class TaskDemo {
 
 
     public static void main(String[] args) {
-
-        Status currentStatus = Status.DRAFT;
-        System.out.println("Ваш лимит: " + printStatus(currentStatus));
+        String[][] menu = {
+                {"Профиль", "Настройки"},
+                {"Главная", "Каталог"},
+                {"Корзина", "Оплата"}
+        };
+        String target = "Каталог";
+        System.out.println(java.util.Arrays.toString(masMenu(menu, target)));
 
     }
 
-    public static int printStatus (Status status) {
-        switch (status) {
-            case APPROVED: return 0;
-            case REVIEW: return 50;
-            case  DRAFT: return 100;
-        }
-        return 0;
+    public static int[] masMenu(String[][] menu, String target) {
+        if (menu.length == 0 || menu[0].length == 0) {
+            return new int[]{-1, -1};
+        }else  {
+            for (int i = 0; i < menu.length; i++) {
+                for (int j = 0; j < menu[0].length; j++) {
+                    if (menu[i][j].equals(target)) {
+                        return new int[]{i, j};
+                    }
+                }
+            }
+        }return new int[]{-1, -1};
     }
+
+
 
 
 
