@@ -1,3 +1,3 @@
 enum Status {
-    DRAFT, REVIEW, APPROVED
+    LOW, MEDIUM, HIGH
 }
