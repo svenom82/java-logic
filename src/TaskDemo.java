@@ -5,18 +5,19 @@ public class TaskDemo {
 
 
     public static void main(String[] args) {
-        String name = " евгений ";
-        System.out.println(formatUserName(name));
+        int[] userId = {101, 102, 103, 104, 105};
+        boolean[] userStatus = {true, false, true, false, true};
+        printPremiumUser(userId, userStatus);
 
     }
-
-    public static String formatUserName(String name) {
-      String cleanName = name.trim();
-      String firstLetter = cleanName.substring(0, 1).toUpperCase();
-      String restOfName = cleanName.substring(1).toLowerCase();
-
-
-        return firstLetter + restOfName;
+    public static void printPremiumUser (int[] userId, boolean[] userStatus) {
+        for (int i = 0; i < userId.length; i++) {
+            if (userStatus[i]) {
+                System.out.print(userId[i] + " ");
+            }
+        }
     }
+
+
 }
 
