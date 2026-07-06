@@ -1,9 +1,19 @@
+import user.User;
+
 public class Main {
-    public static final int BASE_GRID = 8;
-
-
 
     public static void main(String[] args) {
+        User user1 = new User ("Alex", 101, true);
+        User user2 = new User ("Max", 102, false);
+        User user3 = new User ("John", 103, true);
+
+        User[] users = {user1, user2, user3};
+
+        for (User currentUser: users) {
+            if(currentUser.isHasSubscription()) {
+                System.out.println(currentUser.getName() + " has subscribed");
+            }
+        }
     }
 
 
