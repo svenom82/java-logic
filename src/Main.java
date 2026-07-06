@@ -1,4 +1,5 @@
 import user.User;
+import user.UserService;
 
 public class Main {
 
@@ -9,11 +10,8 @@ public class Main {
 
         User[] users = {user1, user2, user3};
 
-        for (User currentUser: users) {
-            if(currentUser.isHasSubscription()) {
-                System.out.println(currentUser.getName() + " has subscribed");
-            }
-        }
+        UserService userService = new UserService();
+        userService.printSubscribe(users);
     }
 
 
