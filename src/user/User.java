@@ -6,6 +6,8 @@ public class User {
     private int id;
     private boolean hasSubscription;
 
+    private Button[] buttons;
+
     public String getName() {
         return name;
     }
@@ -18,10 +20,14 @@ public class User {
         return hasSubscription;
     }
 
-    public User(String name, int id, boolean hasSubscription) {
+    public User(String name, int id, boolean hasSubscription, Button[] buttons) {
         this.name = name;
         this.id = id;
         this.hasSubscription = hasSubscription;
+        this.buttons = buttons;
+    }
+    public Button[] getButtons() {
+        return buttons;
     }
 }
 

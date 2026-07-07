@@ -1,19 +1,32 @@
+package main;
+
+import user.Button;
 import user.User;
 import user.UserService;
 
 public class Main {
-
     public static void main(String[] args) {
-        User user1 = new User ("Alex", 101, true);
-        User user2 = new User ("Max", 102, false);
-        User user3 = new User ("John", 103, true);
+
+        // Создаем кнопки для Алекса
+        Button btn1 = new Button("Купить", "green");
+        Button btn2 = new Button("Удалить", "red");
+        Button[] alexButtons = {btn1, btn2};
+
+        // Создаем кнопку для Джона
+        Button btn3 = new Button("Поделиться", "blue");
+        Button[] johnButtons = {btn3};
+
+        // У Макса кнопок не будет, создаем ему пустой массив
+        Button[] maxButtons = {};
+
+        // Создаем пользователей и передаем им их массивы кнопок
+        User user1 = new User("Alex", 101, true, alexButtons);
+        User user2 = new User("Max", 102, false, maxButtons);
+        User user3 = new User("John", 103, true, johnButtons);
 
         User[] users = {user1, user2, user3};
 
         UserService userService = new UserService();
-        userService.printSubscribe(users);
+        userService.printSubscribers(users);
     }
-
-
-
 }
