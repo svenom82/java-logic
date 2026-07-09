@@ -29,6 +29,20 @@ public class User {
     public Button[] getButtons() {
         return buttons;
     }
+    public void setId(int id) {
+        if (id > 0){
+            this.id = id;
+        } else {
+            System.out.println("Ошибка: ID пользователя должен быть больше 0!");
+        }
+    }
+    public void setName(String name) {
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Ошибка: Имя пользователя не может быть пустым");
+        }
+    }
 }
 
 

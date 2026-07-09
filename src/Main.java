@@ -28,5 +28,14 @@ public class Main {
 
         UserService userService = new UserService();
         userService.printSubscribers(users);
+
+        System.out.println("--- Тест инкапсуляции ---");
+        user1.setId(-500);
+        System.out.println("ID после попытки взлома: " + user1.getId());
+
+        user1.setName("   ");
+        System.out.println("Имя после попытки взлома: " + user1.getName());
+
+
     }
 }
