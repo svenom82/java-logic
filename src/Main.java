@@ -1,5 +1,6 @@
 import user.Button;
 import user.UserCard;
+import user.UserService;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +12,9 @@ public class Main {
         System.out.println("Карточка создана для : " + Card.getUserName());
         System.out.println("Кнопка внутри карточки : " + Card.getButton().getLabel());
         System.out.println("Скругление кнопок : " + Card.getButton().getRound());
+
+        UserService userService = new UserService();
+        userService.printInfo(Card);
 
 
     }
