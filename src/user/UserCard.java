@@ -1,0 +1,40 @@
+package user;
+import user.Button;
+
+public  class UserCard {
+    private String userName;
+    private int Number;
+    private boolean Status;
+    private Button button;
+
+    public UserCard(String userName, int Number, boolean Status, Button button) {
+        this.userName = userName;
+        this.Number = Number;
+        this.Status = Status;
+        this.button = button;
+    }
+    public String getUserName() {
+        return userName;
+    }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    public int getNumber() {
+        return Number;
+    }
+    public void setNumber(int number) {
+        this.Number = number;
+    }
+    public boolean isStatus() {
+        return Status;
+    }
+    public void setStatus(boolean status) {
+        this.Status = status;
+    }
+    public Button getButton() {
+        return button;
+    }
+    public void setButton(Button button) {
+        this.button = button;
+    }
+}
