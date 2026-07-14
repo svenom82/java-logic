@@ -12,6 +12,7 @@ public class Main {
         System.out.println("Карточка создана для : " + Card.getUserName());
         System.out.println("Кнопка внутри карточки : " + Card.getButton().getLabel());
         System.out.println("Скругление кнопок : " + Card.getButton().getRound());
+        System.out.println("Пользователь: " + Card.getTags());
 
         UserService userService = new UserService();
         userService.printInfo(Card);

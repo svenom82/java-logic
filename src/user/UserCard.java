@@ -37,4 +37,12 @@ public  class UserCard {
     public void setButton(Button button) {
         this.button = button;
     }
+
+    private String generateTags () {
+     return getUserName() + "#" + getNumber();
+    }
+    public  String getTags() {
+        return generateTags();
+    }
+
 }
