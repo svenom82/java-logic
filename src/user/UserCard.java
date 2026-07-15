@@ -6,12 +6,14 @@ public  class UserCard {
     private int Number;
     private boolean Status;
     private Button button;
+    private CardStyle style;
 
     public UserCard(String userName, int Number, boolean Status, Button button) {
         this.userName = userName;
         this.Number = Number;
         this.Status = Status;
         this.button = button;
+        this.style = new CardStyle("Red");
     }
     public String getUserName() {
         return userName;
@@ -44,5 +46,14 @@ public  class UserCard {
     public  String getTags() {
         return generateTags();
     }
+
+    private class CardStyle {
+        private String color;
+
+        CardStyle(String color) {
+            this.color = color;
+        }
+    }
+
 
 }
