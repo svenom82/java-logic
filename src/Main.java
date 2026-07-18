@@ -1,7 +1,6 @@
-import user.AdminCard;
-import user.Button;
-import user.UserCard;
-import user.UserService;
+import user.*;
+
+import java.util.PrimitiveIterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +20,16 @@ public class Main {
 
         UserService userService = new UserService();
         userService.printInfo(Card);
+        userService.printInfo(admin, "Внимание");
+
+        PrimaryButton primary = new PrimaryButton("Войти", 120);
+        SecondaryButton secondary = new SecondaryButton("Отмена", 80);
+
+        primary.draw();
+        secondary.draw();
+
 
 
     }
+
 }
