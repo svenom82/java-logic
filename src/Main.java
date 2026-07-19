@@ -27,6 +27,7 @@ public class Main {
 
         primary.draw();
         secondary.draw();
+        primary.onClick();
 
 
 
