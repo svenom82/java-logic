@@ -34,6 +34,11 @@ public class Main {
         primary.onDoubleClick();
         Clickable.printRules();
 
+        UserRecord user = new UserRecord("Алексей", 50);
+        System.out.println(user.name());
+        System.out.println(user.age());
+        System.out.println(user);
+
 
 
     }
