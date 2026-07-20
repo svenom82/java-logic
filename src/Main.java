@@ -4,6 +4,8 @@ import java.util.PrimitiveIterator;
 
 public class Main {
     public static void main(String[] args) {
+
+        //region
         Button loginButton = new Button("Войти", "blue" , 8);
         UserCard Card = new UserCard("Alex" , 101, true, loginButton);
         AdminCard admin = new AdminCard("Evgeny", 777, true, new Button("Войти", "red", 12),
@@ -24,10 +26,13 @@ public class Main {
 
         PrimaryButton primary = new PrimaryButton("Войти", 120);
         SecondaryButton secondary = new SecondaryButton("Отмена", 80);
+        //endregion
 
         primary.draw();
         secondary.draw();
         primary.onClick();
+        primary.onDoubleClick();
+        Clickable.printRules();
 
 
 
